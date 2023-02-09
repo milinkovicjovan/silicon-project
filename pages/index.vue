@@ -1,5 +1,3 @@
 <template>
-  <h1>Hello</h1>
+  <h1>index</h1>
 </template>
-
-<script></script>
