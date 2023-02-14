@@ -1,68 +1,59 @@
 <template>
   <div v-for="block in blocks" :key="block.id">
-    <Page1Hero
-      v-if="block.__component === 'blocks.hero'"
+    <Page2Hero
+      v-if="block.__component === 'blocks.hero-single-column'"
       v-bind="block.attributes"
       :title="block.title"
       :description="block.description"
-      :primaryCallToAction="block.primaryCallToAction.title"
-      :secondaryCallToAction="block.secondaryCallToAction.title"
-    ></Page1Hero>
-    <Page1Brands
-      v-if="block.__component === 'blocks.logos'"
-      v-bind="block.attributes"
-      :logos="block.logos"
-    ></Page1Brands>
-    <Page1TradingFeature
-      v-if="block.__component === 'blocks.trading-feature'"
-      v-bind="block.attributes"
-    ></Page1TradingFeature>
-    <Page1AppFeature
-      v-if="block.__component === 'blocks.two-columns-image-right'"
-      :title="block.title"
-      :subtitle="block.subtitle"
-      :image="block.image.data.attributes.url"
-    >
-    </Page1AppFeature>
-    <Page1CryptoFeature
-      v-if="block.__component === 'blocks.two-columns-image-on-left'"
-      :title="block.title"
-      :subtitle="block.subtitle"
-      :image="block.image.data.attributes.url"
-    ></Page1CryptoFeature>
-    <Page1HowItWorks
-      v-if="block.__component === 'blocks.how-does-it-work'"
+      :callToActionButton="block.callToAction"
+    ></Page2Hero>
+    <Page2OurTool
+      v-if="block.__component === 'blocks.2x3-grid'"
       :title="block.title"
       :description="block.description"
-      :steps="block.steps"
-    ></Page1HowItWorks>
-    <Page1Video
-      v-if="block.__component === 'blocks.video'"
-      :link="block.link"
-      :video="block.thumbnail.data.attributes.url"
+      :items="block.items"
     >
-    </Page1Video>
-    <Page1Testimonials
+    </Page2OurTool>
+    <Page2SwitchBetween
+      v-if="block.__component === 'blocks.switch-between-light-and-dark-mode'"
+    >
+    </Page2SwitchBetween>
+    <Page2Testimonials
       v-if="block.__component === 'blocks.testimonials'"
       :title="block.title"
       :comments="block.comments"
     >
-    </Page1Testimonials>
-    <Page1CallToAction
-      v-if="block.__component === 'blocks.call-to-action'"
+    </Page2Testimonials>
+    <Page2AppDownload v-if="block.__component === 'blocks.app-download-cta'">
+    </Page2AppDownload>
+    <Page2Pricing
+      v-if="block.__component === 'blocks.pricing'"
       :title="block.title"
-      :buttonTitle="block.button.title"
-      :link="block.link"
-      :points="block.points"
-    ></Page1CallToAction>
-    <Page1Footer
+      :description="block.description"
+      :items="block.items"
+    ></Page2Pricing>
+    <Page2WorkTools
+      v-if="block.__component === 'blocks.4x2-grid'"
+      :title="block.title"
+      :description="block.description"
+      :items="block.items"
+    ></Page2WorkTools>
+    <Page2CallToAction
+      v-if="block.__component === 'blocks.call-to-action-1'"
+      :title="block.title"
+      :description="block.description"
+      :button="block.button"
+    >
+    </Page2CallToAction>
+    <Page2Footer
       v-if="block.__component === 'blocks.footer'"
       :heading="block.heading"
       :image="block.footerImage.data.attributes.url"
       :links="block.links"
       :madeBy="block.madeBy"
       :socialMediaLinks="block.socialMediaLinks"
-    ></Page1Footer>
+    >
+    </Page2Footer>
   </div>
 </template>
 
