@@ -1,51 +1,53 @@
 <template>
   <div v-for="block in blocks" :key="block.id">
-    <Page2Hero
+    <LandingPageHeroTaskManagment
       v-if="block.__component === 'blocks.hero-single-column'"
       v-bind="block.attributes"
       :title="block.title"
       :description="block.description"
       :callToActionButton="block.callToAction"
-    ></Page2Hero>
-    <Page2OurTool
+    ></LandingPageHeroTaskManagment>
+    <LandingPageOurTool
       v-if="block.__component === 'blocks.2x3-grid'"
       :title="block.title"
       :description="block.description"
       :items="block.items"
     >
-    </Page2OurTool>
-    <Page2SwitchBetween
+    </LandingPageOurTool>
+    <LandingPageSwitchBetween
       v-if="block.__component === 'blocks.switch-between-light-and-dark-mode'"
     >
-    </Page2SwitchBetween>
-    <Page2Testimonials
+    </LandingPageSwitchBetween>
+    <LandingPageTestimonials2
       v-if="block.__component === 'blocks.testimonials'"
       :title="block.title"
       :comments="block.comments"
     >
-    </Page2Testimonials>
-    <Page2AppDownload v-if="block.__component === 'blocks.app-download-cta'">
-    </Page2AppDownload>
-    <Page2Pricing
+    </LandingPageTestimonials2>
+    <LandingPageAppDownload
+      v-if="block.__component === 'blocks.app-download-cta'"
+    >
+    </LandingPageAppDownload>
+    <LandingPagePricing
       v-if="block.__component === 'blocks.pricing'"
       :title="block.title"
       :description="block.description"
       :items="block.items"
-    ></Page2Pricing>
-    <Page2WorkTools
+    ></LandingPagePricing>
+    <LandingPageWorkTools
       v-if="block.__component === 'blocks.4x2-grid'"
       :title="block.title"
       :description="block.description"
       :items="block.items"
-    ></Page2WorkTools>
-    <Page2CallToAction
+    ></LandingPageWorkTools>
+    <LandingPageTasks
       v-if="block.__component === 'blocks.call-to-action-1'"
       :title="block.title"
       :description="block.description"
       :button="block.button"
     >
-    </Page2CallToAction>
-    <Page2Footer
+    </LandingPageTasks>
+    <LandingPageFooter
       v-if="block.__component === 'blocks.footer'"
       :heading="block.heading"
       :image="block.footerImage.data.attributes.url"
@@ -53,7 +55,7 @@
       :madeBy="block.madeBy"
       :socialMediaLinks="block.socialMediaLinks"
     >
-    </Page2Footer>
+    </LandingPageFooter>
   </div>
 </template>
 

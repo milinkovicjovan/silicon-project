@@ -45,10 +45,9 @@
           style="width: 64%; min-width: 32rem"
         >
           <!-- Pricing plan -->
-          <div class="col" v-for="(item, index) in items">
+          <div class="col" v-for="item in items.slice(1)">
             <div
               class="card bg-light h-100 border-0 border-end rounded-0 py-3 py-sm-4 py-lg-5"
-              v-if="index > 0"
             >
               <div class="card-body text-center">
                 <h3 class="mb-2">{{ item.title }}</h3>

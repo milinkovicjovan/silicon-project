@@ -51,6 +51,17 @@
   </section>
 </template>
 
-<script setup>
-defineProps({});
+<script>
+export default {
+  mounted() {
+    if (process.client) {
+      import("img-comparison-slider").then(
+        ({ default: ImgComparisonSlider }) => {
+          const slider = new ImgComparisonSlider("#slider");
+          slider.init();
+        }
+      );
+    }
+  },
+};
 </script>
